@@ -64,7 +64,7 @@ Ao editar um dado no perfil de usuário e salvar, o sistema redireciona para o f
 ## **Evidências**
 
 - **Gravação de tela**:
-  - [Visualizar Gravação](https://app.screencast.com/uulMqTK5vtOgE)
+  - [Visualizar Gravação Bug 1](https://app.screencast.com/uulMqTK5vtOgE)
 
 ---
 
@@ -79,4 +79,78 @@ Ao editar um dado no perfil de usuário e salvar, o sistema redireciona para o f
 
 ## **Prioridade**
 - **Alta**: Deve ser corrigido com urgência devido ao impacto na experiência do usuário e à alta frequência do problema.
+
+
+---
+
+
+## **Bug 2: Validação incorreta na data de nascimento permite anos inválidos (ex.: 1800)**
+
+### **Descrição**
+O sistema permite que o usuário insira uma data de nascimento com um ano inválido, como `1800`, e conclua o cadastro sem apresentar qualquer validação ou mensagem de erro. Apesar de ser uma data válida em termos de formato, não faz sentido no contexto real, já que uma pessoa nascida nesse ano não estaria viva. A ausência de validação compromete a integridade dos dados cadastrados.
+
+---
+
+### **Passos para reproduzir**
+1. Acesse a URL: [Cadastro de Usuário](https://paciente-staging.lacreisaude.com.br/perfil/).
+2. No campo **Data de Nascimento**, insira a data `01/01/1800` (ou outra data com um ano irreal, ex.: `01/01/1700`).
+3. Clique no botão **Salvar**.
+4. Observe que o sistema aceita a data e finaliza o cadastro sem apresentar mensagens de erro ou validações.
+
+---
+
+### **Resultado esperado**
+- O sistema deve validar o campo de data de nascimento e limitar os anos permitidos a um intervalo razoável, como `1900` até o ano atual.
+- Se o usuário inserir um ano fora desse intervalo, o sistema deve exibir uma mensagem de erro, como: "Por favor, insira uma data de nascimento válida.".
+
+
+---
+
+### **Resultado real (bug)**
+- O sistema aceita e cadastra a data de nascimento com anos inválidos, como `1800`, sem qualquer validação ou mensagem de erro.
+
+---
+
+### **Impacto**
+- **Gravidade**: Média.
+- Pode comprometer a integridade dos dados do banco, gerando cadastros incoerentes.
+- Pode impactar sistemas que dependem de dados precisos, como cálculos de idade ou relatórios baseados em datas de nascimento.
+- **Frequência**: Sempre que uma data inválida é inserida.
+- **Impacto no negócio**:
+- Dificulta a análise de dados, como cálculos de faixas etárias.
+- Afeta a confiabilidade do sistema e pode gerar retrabalho para corrigir cadastros inconsistentes.
+
+---
+
+### **Ambiente de Teste**
+- **URL**: [https://paciente-staging.lacreisaude.com.br/perfil/](https://paciente-staging.lacreisaude.com.br/perfil/)
+- **Dispositivo**: Mobile (simulado via DevTools do Google Chrome).
+- **Sistema Operacional**: Windows 11 Home Single Language.
+- **Navegador**: Google Chrome Versão 131.0.6778.265 (Versão oficial) 64 bits.
+- **Data do Teste**: 09/01/2025.
+
+---
+
+### **Evidências**
+- **Capturas de tela**:
+- Antes de salvar o cadastro com a data inválida.
+
+
+![Atualização com data de nascimento inválida 2](https://github.com/user-attachments/assets/6e53622b-6afb-4db1-997f-df90fae6725e)
+
+
+- Tela de confirmação mostrando que o cadastro foi aceito com a data `1800`.
+
+![Atualização com data de nascimento inválida](https://github.com/user-attachments/assets/446b6408-396c-4bb4-b722-c54855c4e931)
+
+- **Gravação de tela**:
+- [Visualizar Gravação Bug 2](https://app.screencast.com/BL8gTxqp1pu1X)
+
+---
+
+### **Sugestão de Melhoria**
+1. Implementar uma validação no campo **Data de Nascimento**, limitando o intervalo permitido para:
+ - Anos entre `1900` e o ano atual.
+ - Garantir que o formato da data esteja correto.
+2. Exibir uma mensagem clara para o usuário ao inserir uma data fora do intervalo permitido:
 
