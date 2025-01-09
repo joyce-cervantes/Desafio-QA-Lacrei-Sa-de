@@ -15,7 +15,7 @@ Repositório com casos de teste para o desafio de QA da Lacrei Saúde.
 
 1. Abra o site de testes: [Lacrei Saúde](https://paciente-staging.lacreisaude.com.br/).
 2. Use o navegador Google Chrome ou outro navegador moderno.
-3. Ative o modo responsivo no navegador para simular a versão mobile (verifique [instruções aqui](#)).
+3. Ative o modo responsivo no navegador para simular a versão mobile.
 
 ## Como Executar os Casos de Teste
 
