@@ -3,7 +3,7 @@ Feature: Edição do perfil da pessoa usuária
 
   Scenario: Atualização com dados válidos
     Given O usuário está logado e acessa a página de edição de perfil
-    When O usuário preenche os campos "Nome" e "Telefone" com valores válidos
+    When O usuário preenche o campo "Data de nascimento" com valores válidos
     And Clica no botão "Salvar"
     Then O sistema exibe a mensagem "Informações atualizadas com sucesso."
 
