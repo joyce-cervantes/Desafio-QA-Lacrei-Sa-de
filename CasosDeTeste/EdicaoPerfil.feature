@@ -11,10 +11,10 @@ Feature: Edição do perfil da pessoa usuária
     Given O usuário está logado e acessa a página de edição de perfil
     When O usuário deixa o campo "Nome" vazio
     And Clica no botão "Salvar"
-    Then O sistema exibe a mensagem de erro "O campo Nome é obrigatório."
+    Then O sistema exibe a mensagem de erro "Nome deve ser preenchido."
 
-  Scenario: Atualização com telefone inválido
+  Scenario: Atualização com data de nascimento inválida
     Given O usuário está logado e acessa a página de edição de perfil
-    When O usuário preenche o campo "Telefone" com um valor inválido
+    When O usuário preenche o campo "Data de nascimento" com um valor inválido
     And Clica no botão "Salvar"
-    Then O sistema exibe a mensagem de erro "Telefone inválido. Insira um número válido."
+    Then O sistema exibe a mensagem de erro "Ano de nascimento inválido. Insira um número válido."
