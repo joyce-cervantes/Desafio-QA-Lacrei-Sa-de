@@ -1,6 +1,6 @@
 # Registro de Bug
 
-## **Bug 1:**
+## Bug 1:
 
 ## **Título:**
 Perda de dados ao editar o cadastro, causando redirecionamento em loop para completar cadastro.
@@ -62,11 +62,9 @@ Ao editar um dado no perfil de usuário e salvar, o sistema redireciona para o f
 ---
 
 ## **Evidências**
-- **Capturas de tela**:
-  - [Adicionar imagem aqui mostrando o redirecionamento para "Completar Cadastro".]
-  - [Adicionar imagem mostrando o estado final após o segundo salvamento.]
-- **Gravação de tela (opcional)**:
-  - [Adicionar link para vídeo ou arquivo que demonstra o problema.]
+
+- **Gravação de tela**:
+  - [Visualizar Gravação](https://app.screencast.com/uulMqTK5vtOgE)
 
 ---
 
