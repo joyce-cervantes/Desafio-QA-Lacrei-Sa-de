@@ -1,5 +1,7 @@
 # Registro de Bugs
 
+//Apenas um esqueleto pra ter uma ideia, meditar conforme bugs encontrados
+
 ## Bug 1: Erro no cadastro com e-mail inválido
 - **Descrição:** A mensagem exibida é genérica.
 - **Passos:** Preencha o campo e-mail com "invalido@" e clique em "Criar Conta".
