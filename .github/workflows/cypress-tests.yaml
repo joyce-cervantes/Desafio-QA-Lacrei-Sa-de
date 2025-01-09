@@ -1,0 +1,32 @@
+name: Cypress Tests - Validação de Data de Nascimento
+
+on:
+  push:
+    branches:
+      - main # Roda o teste quando houver commits na branch principal
+  pull_request:
+    branches:
+      - main # Roda o teste para pull requests na branch principal
+
+jobs:
+  validate-birthday-field:
+    runs-on: ubuntu-latest # Sistema operacional onde o teste será executado
+
+    steps:
+      # Etapa 1: Fazer o checkout do código do repositório
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Etapa 2: Configurar o Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16 # Versão do Node.js usada no projeto
+
+      # Etapa 3: Instalar as dependências do projeto
+      - name: Install dependencies
+        run: npm install
+
+      # Etapa 4: Executar o teste automatizado no Cypress
+      - name: Run Cypress test for Bug 2
+        run: npx cypress run --spec "cypress/e2e/validate-birthday.cy.js"
