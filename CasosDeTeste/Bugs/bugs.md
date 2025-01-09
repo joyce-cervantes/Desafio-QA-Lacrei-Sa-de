@@ -1,6 +1,6 @@
 # Registro de Bugs
 
-//Apenas um esqueleto pra ter uma ideia, meditar conforme bugs encontrados
+//Apenas um esqueleto pra ter uma ideia, editar conforme bugs encontrados
 
 ## Bug 1: Erro no cadastro com e-mail inválido
 - **Descrição:** A mensagem exibida é genérica.
