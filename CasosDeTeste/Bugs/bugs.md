@@ -146,3 +146,72 @@ O sistema permite que o usuário insira uma data de nascimento com um ano invál
 3. Configurar um teste automatizado para validar o comportamento do campo **Data de Nascimento**.
    - Adicionar o teste no workflow YAML para rodar automaticamente:
      - [Local do YAML](https://github.com/joyce-cervantes/QA-Testes-Lacrei/blob/main/.github/workflows/cypress-tests.yaml).
+
+
+---
+
+## **Bug 3: Requisição repetida de confirmação de telefone ao visualizar dados de contato de um profissional de saúde**
+
+### **Descrição**
+O sistema solicita que o usuário confirme seu telefone (recebendo um código via SMS) antes de visualizar os dados de contato de um profissional de saúde. Após a confirmação, o usuário consegue acessar os dados de contato normalmente. No entanto, ao retornar à tela inicial e buscar novamente o mesmo profissional, o sistema exige que o telefone seja confirmado novamente, mesmo que já tenha sido validado anteriormente durante a mesma sessão.
+
+---
+
+### **Passos para reproduzir**
+1. Acesse o aplicativo e faça login no sistema.
+2. Busque um profissional de saúde na tela inicial.
+3. Escolha o profissional desejado.
+4. Clique para visualizar os dados de contato do profissional.
+5. Confirme o telefone inserindo o código recebido via SMS.
+6. Observe que os dados de contato do profissional são exibidos corretamente.
+7. Retorne à tela inicial.
+8. Busque novamente o mesmo profissional.
+9. Clique novamente para visualizar os dados de contato.
+
+---
+
+### **Resultado esperado**
+- Após a confirmação do telefone na primeira tentativa, o sistema deve lembrar que o telefone já foi validado durante a mesma sessão.
+- O sistema não deve solicitar a confirmação do telefone novamente para acessar os dados de contato do mesmo profissional.
+
+---
+
+### **Resultado real**
+- O sistema solicita a confirmação do telefone novamente ao tentar visualizar os dados de contato do mesmo profissional, mesmo que o telefone já tenha sido validado anteriormente durante a mesma sessão.
+
+---
+
+### **Impacto**
+- **Gravidade**: Média.
+  - Prejudica a experiência do usuário devido à redundância do processo.
+  - Pode gerar frustração e aumentar o tempo necessário para acessar as informações desejadas.
+- **Frequência**: Sempre que o mesmo profissional é buscado novamente durante a mesma sessão.
+- **Impacto no negócio**:
+  - Reduz a percepção de usabilidade e confiabilidade do aplicativo.
+  - Pode desmotivar usuários a utilizar a funcionalidade devido à repetição desnecessária do processo.
+
+---
+
+### **Ambiente de Teste**
+- **URL**: [https://paciente-staging.lacreisaude.com.br/](https://paciente-staging.lacreisaude.com.br/)
+- **Dispositivo**: Mobile (simulado via DevTools do Google Chrome).
+- **Sistema Operacional**: Windows 11 Home Single Language.
+- **Navegador**: Google Chrome Versão 131.0.6778.265 (Versão oficial) 64 bits.
+- **Data do Teste**: 09/01/2025.
+
+---
+
+### **Evidências**
+- **Gravação de tela**:
+  - [Visualizar Gravação Bug 3](https://app.screencast.com/WQ3pO3cWjvTxC)
+
+---
+
+### **Sugestão de Melhoria**
+1. Implementar um mecanismo que armazene a validação do telefone para a sessão atual, evitando que o usuário precise confirmar o telefone repetidamente para o mesmo profissional.
+2. Adicionar uma mensagem informativa caso a sessão expire, indicando que uma nova validação será necessária.
+
+---
+
+### **Prioridade**
+- **Média**: Deve ser corrigido para melhorar a experiência do usuário e evitar redundância no processo de validação.
