@@ -23,3 +23,11 @@
 | Atualização com dados válidos                 | Sucesso         | Informações atualizadas corretamente.                                         |
 | Atualização sem preencher nome                | Sucesso         | Mensagem de erro exibida corretamente.                                        |
 | Atualização com data de nascimento inválida   | Falha           | O sistema aceitou uma data inválida (ex.: 1800) sem exibir mensagem de erro.  |
+
+## Fluxo: Busca de um profissional de saúde
+
+| Cenário                                       | Resultado       | Observação                                                                    |
+|-----------------------------------------------|-----------------|-------------------------------------------------------------------------------|
+| Busca de profissional por especialidade       | Sucesso         | Informações exibidas corretamente.                                            |
+| Busca de especialidade não existente          | Sucesso         | Mensagem de erro exibida corretamente.                                        |
+| Entrar em contato com um profissional         | Sucesso         | O sistema exibe as opções de forma de contato com o profissional.             |
