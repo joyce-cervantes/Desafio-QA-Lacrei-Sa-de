@@ -1,11 +1,1 @@
-# Resultados dos Testes de Desempenho
 
-## Endpoint Testado: `/profissionais?especialidade=psicologia`
-
-**Método HTTP**: `GET`  
-**Tempo de Resposta**: 150ms  
-**Status Code**: 200  
-
-### Observações:
-- O endpoint retornou os profissionais corretamente com base na especialidade.
-- Testes adicionais com parâmetros inválidos retornaram o erro esperado (`400`).
