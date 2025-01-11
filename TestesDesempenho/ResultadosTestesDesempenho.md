@@ -51,13 +51,16 @@ Os testes de desempenho foram realizados para avaliar o tempo de resposta e a es
 
 ## **Evidências**
 1. **Busca de Profissional**
+   
    ![Busca de Profissional](https://github.com/joyce-cervantes/QA-Testes-Lacrei/blob/main/TestesDesempenho/imagens/Busca%20de%20Profissional.png)
 
-2. **Cadastro**
-   ![Cadastro]([https://github.com/seu-usuario/seu-repositorio/imagens/cadastro.png](https://github.com/joyce-cervantes/QA-Testes-Lacrei/blob/main/TestesDesempenho/imagens/Cadastro.png))
+3. **Cadastro**
+   
+   ![Cadastro](https://github.com/joyce-cervantes/QA-Testes-Lacrei/blob/main/TestesDesempenho/imagens/Cadastro.png)
 
-3. **Login**
-   ![Login]([https://github.com/seu-usuario/seu-repositorio/imagens/login.png](https://github.com/joyce-cervantes/QA-Testes-Lacrei/blob/main/TestesDesempenho/imagens/Login.png))
+5. **Login**
+   
+   ![Login](https://github.com/joyce-cervantes/QA-Testes-Lacrei/blob/main/TestesDesempenho/imagens/Login.png)
 
 ---
 
