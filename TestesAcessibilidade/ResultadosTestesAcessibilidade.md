@@ -57,7 +57,10 @@ Embora os testes de acessibilidade tenham resultado em alta conformidade, recome
 ## **Evidências**
 1. **Captura de Tela - Relatório Lighthouse:**
    [Relatório Lighthouse](https://github.com/joyce-cervantes/QA-Testes-Lacrei/blob/main/TestesAcessibilidade/Evidências/Teste%20de%20Acessibilidade.pdf)
+   
 2. **Captura de Tela - Contraste de Cores:**
+
    ![Resultados do Contraste](https://github.com/joyce-cervantes/QA-Testes-Lacrei/blob/main/TestesAcessibilidade/Evidências/Acessibilidade-Contraste.png)
+   
 3. **Gravação de Tela - Navegação por Teclado:**
    [Resultado da Navegação por Teclado](https://app.screencast.com/6cHNsHsPB28g0)
