@@ -2,7 +2,7 @@
 
 ---
 
-## **Bug 1: Perda de dados ao editar o cadastro, causando redirecionamento em loop para completar cadastro**
+## **Bug 1: Perda de dados do paciente ao editar o cadastro, causando redirecionamento em loop para completar cadastro**
 
 ### **Descrição**
 Ao editar um dado no perfil de paciente e salvar, o sistema redireciona para o fluxo de "Completar Cadastro", mesmo que todos os dados já estivessem preenchidos anteriormente. O problema ocorre em duas etapas:
@@ -64,7 +64,7 @@ Ao editar um dado no perfil de paciente e salvar, o sistema redireciona para o f
 ---
 
 ### **Sugestão de Melhoria**
-1. Revisar a lógica de validação ao salvar os dados de perfil, garantindo que:
+1. Revisar a lógica de validação ao salvar os dados de perfil do paciente, garantindo que:
    - Dados existentes não sejam perdidos.
    - O fluxo de "Completar Cadastro" só seja acionado quando realmente houver informações ausentes.
 2. Implementar mensagens claras ao usuário indicando o status do salvamento (ex.: "Dados salvos com sucesso").
@@ -73,14 +73,14 @@ Ao editar um dado no perfil de paciente e salvar, o sistema redireciona para o f
 ---
 
 ### **Prioridade**
-- **Alta**: Deve ser corrigido com urgência devido ao impacto na experiência do usuário e à alta frequência do problema.
+- **Alta**: Deve ser corrigido com urgência devido ao impacto na experiência do paciente e à alta frequência do problema.
 
 ---
 
 ## **Bug 2: Validação incorreta na data de nascimento permite anos inválidos (ex.: 1800)**
 
 ### **Descrição**
-O sistema permite que o usuário insira uma data de nascimento com um ano inválido, como 1800, e conclua o cadastro sem apresentar qualquer validação ou mensagem de erro. Apesar de ser uma data válida em termos de formato, não faz sentido no contexto real, já que uma pessoa nascida nesse ano não estaria viva. A ausência de validação compromete a integridade dos dados cadastrados.
+O sistema permite que o paciente insira uma data de nascimento com um ano inválido, como 1800, e conclua o cadastro sem apresentar qualquer validação ou mensagem de erro. Apesar de ser uma data válida em termos de formato, não faz sentido no contexto real, já que uma pessoa nascida nesse ano não estaria viva. A ausência de validação compromete a integridade dos dados cadastrados.
 
 ---
 
@@ -94,7 +94,7 @@ O sistema permite que o usuário insira uma data de nascimento com um ano invál
 
 ### **Resultado esperado**
 - O sistema deve validar o campo de data de nascimento e limitar os anos permitidos a um intervalo razoável, como 1900 até o ano atual.
-- Se o usuário inserir um ano fora desse intervalo, o sistema deve exibir uma mensagem de erro, como: "Por favor, insira uma data de nascimento válida."
+- Se o paciente inserir um ano fora desse intervalo, o sistema deve exibir uma mensagem de erro, como: "Por favor, insira uma data de nascimento válida."
 
 ---
 
@@ -153,7 +153,7 @@ O sistema permite que o usuário insira uma data de nascimento com um ano invál
 ## **Bug 3: Requisição repetida de confirmação de telefone ao visualizar dados de contato de um profissional de saúde**
 
 ### **Descrição**
-O sistema solicita que o usuário confirme seu telefone (recebendo um código via SMS) antes de visualizar os dados de contato de um profissional de saúde. Após a confirmação, o usuário consegue acessar os dados de contato normalmente. No entanto, ao retornar à tela inicial e buscar novamente o mesmo profissional, o sistema exige que o telefone seja confirmado novamente, mesmo que já tenha sido validado anteriormente durante a mesma sessão.
+O sistema solicita que o paciente confirme seu telefone (recebendo um código via SMS) antes de visualizar os dados de contato de um profissional de saúde. Após a confirmação, o paciente consegue acessar os dados de contato normalmente. No entanto, ao retornar à tela inicial e buscar novamente o mesmo profissional, o sistema exige que o telefone seja confirmado novamente, mesmo que já tenha sido validado anteriormente durante a mesma sessão.
 
 ---
 
@@ -183,7 +183,7 @@ O sistema solicita que o usuário confirme seu telefone (recebendo um código vi
 
 ### **Impacto**
 - **Gravidade**: Média.
-  - Prejudica a experiência do usuário devido à redundância do processo.
+  - Prejudica a experiência do paciente devido à redundância do processo.
   - Pode gerar frustração e aumentar o tempo necessário para acessar as informações desejadas.
 - **Frequência**: Sempre que o mesmo profissional é buscado novamente durante a mesma sessão.
 - **Impacto no negócio**:
@@ -208,13 +208,13 @@ O sistema solicita que o usuário confirme seu telefone (recebendo um código vi
 ---
 
 ### **Sugestão de Melhoria**
-1. Implementar um mecanismo que armazene a validação do telefone para a sessão atual, evitando que o usuário precise confirmar o telefone repetidamente para o mesmo profissional.
+1. Implementar um mecanismo que armazene a validação do telefone para a sessão atual, evitando que o paciente precise confirmar o telefone repetidamente para o mesmo profissional.
 2. Adicionar uma mensagem informativa caso a sessão expire, indicando que uma nova validação será necessária.
 
 ---
 
 ### **Prioridade**
-- **Média**: Deve ser corrigido para melhorar a experiência do usuário e evitar redundância no processo de validação.
+- **Média**: Deve ser corrigido para melhorar a experiência do paciente e evitar redundância no processo de validação.
 
   ---
 
