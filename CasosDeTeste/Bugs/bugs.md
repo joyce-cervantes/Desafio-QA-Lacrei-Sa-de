@@ -158,7 +158,7 @@ O sistema solicita que o usuário confirme seu telefone (recebendo um código vi
 ---
 
 ### **Passos para reproduzir**
-1. Acesse o aplicativo e faça login no sistema.
+1. Como paciente, acesse o aplicativo e faça login no sistema.
 2. Busque um profissional de saúde na tela inicial.
 3. Escolha o profissional desejado.
 4. Clique para visualizar os dados de contato do profissional.
@@ -245,11 +245,11 @@ Durante o teste de navegação por teclado, foi identificado que não é possív
 
 ### **Impacto**
 - **Gravidade**: Alta.
-  - Usuários que dependem exclusivamente do teclado para navegação não conseguem acessar as informações do profissional.
+  - Pacientes que dependem exclusivamente do teclado para navegação não conseguem acessar as informações do profissional.
   - Compromete a conformidade do sistema com as diretrizes de acessibilidade.
 - **Frequência**: Sempre que o botão é acessado via teclado.
 - **Impacto no negócio**:
-  - Afeta a experiência de usuários com deficiência motora ou que preferem navegação por teclado.
+  - Afeta a experiência de pacientes com deficiência motora ou que preferem navegação por teclado.
   - Pode comprometer a imagem do sistema em termos de acessibilidade.
 
 ---
@@ -278,3 +278,67 @@ Durante o teste de navegação por teclado, foi identificado que não é possív
 
 ### **Prioridade**
 - **Alta**: Necessário corrigir para garantir a conformidade com as diretrizes de acessibilidade e melhorar a experiência do usuário.
+
+## **Bug 5: Tela de "Minhas Consultas" redireciona para a página inicial**
+
+---
+
+### **Descrição**
+Paciente ao acessar a funcionalidade "Minhas Consultas" com a sessão iniciada, o sistema redireciona o usuário para a página inicial, em vez de exibir a tela de consultas. Não há mensagens indicando consultas agendadas, histórico de consultas anteriores, ou que nenhuma consulta foi encontrada.
+
+---
+
+### **Passos para reproduzir**
+1. Como paciente, faça login no sistema.
+2. Clique na opção **Minhas Consultas** no menu principal.
+3. Observe que o sistema redireciona o usuário para a página inicial.
+
+---
+
+### **Resultado esperado**
+- O sistema deve exibir:
+  1. A lista de consultas agendadas.
+  2. Mensagem indicando que não há consultas agendadas, caso seja o caso.
+  3. Histórico de consultas anteriores, caso aplicável.
+
+---
+
+### **Resultado real**
+- O sistema redireciona o paciente para a página inicial, sem fornecer nenhuma informação sobre consultas.
+
+---
+
+### **Impacto**
+- **Gravidade**: Alta.
+  - Impede o paciente de acessar informações críticas relacionadas às consultas.
+  - Prejudica a usabilidade e confiabilidade do sistema.
+- **Frequência**: Sempre que a funcionalidade **Minhas Consultas** é acessada.
+- **Impacto no negócio**:
+  - Reduz a confiança do usuário no sistema.
+  - Pode gerar reclamações e insatisfação dos usuários.
+
+---
+
+### **Ambiente de Teste**
+- **URL**: [https://paciente-staging.lacreisaude.com.br/](https://paciente-staging.lacreisaude.com.br/)
+- **Dispositivo**: Mobile (simulado via DevTools do Google Chrome com dispositivo móvel de nível médio).
+- **Sistema Operacional**: Windows 11 Home Single Language.
+- **Navegador**: Google Chrome Versão 131.0.6778.265 (Versão oficial) 64 bits.
+- **Data do Teste**: 13/01/2025.
+
+---
+
+### **Evidências**
+- **Gravação de tela**:
+  - [Visualizar Gravação Bug 5](https://app.screencast.com/WRPUJ8kTDawXk)
+
+---
+
+### **Sugestão de Melhoria**
+1. Implementar a lógica para exibir a lista de consultas agendadas, histórico de consultas ou mensagem de ausência de consultas, conforme aplicável.
+2. Adicionar testes automatizados para validar o comportamento correto da funcionalidade "Minhas Consultas".
+
+---
+
+### **Prioridade**
+- **Alta**: Este bug deve ser corrigido com urgência para restaurar a funcionalidade crítica do sistema e melhorar a experiência do usuário.
