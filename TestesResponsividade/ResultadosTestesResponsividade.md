@@ -36,9 +36,9 @@ Os testes de responsividade foram realizados no site da Lacrei Saúde utilizando
 ## **Evidências**
 Como não foram identificados problemas, não há capturas de tela de erros. A seguir, evidências gerais do layout funcional em diferentes resoluções:
 1. **Simulação Mobile:**
-   ![Evidência Mobile](link_para_imagem_mobile)
+   ![Evidência Mobile](https://app.screencast.com/aFeYtuSngoSVe)
 2. **Simulação Desktop:**
-   ![Evidência Desktop](link_para_imagem_desktop)
+   ![Evidência Desktop](https://app.screencast.com/t0M10SFB44uV7)
 
 ---
 
