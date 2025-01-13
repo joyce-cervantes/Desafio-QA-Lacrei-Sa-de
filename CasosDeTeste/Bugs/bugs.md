@@ -215,3 +215,66 @@ O sistema solicita que o usuário confirme seu telefone (recebendo um código vi
 
 ### **Prioridade**
 - **Média**: Deve ser corrigido para melhorar a experiência do usuário e evitar redundância no processo de validação.
+
+  ---
+
+## **Bug 4: Navegação por teclado não permite visualizar informações do profissional**
+
+### **Descrição**
+Durante o teste de navegação por teclado, foi identificado que não é possível visualizar as informações de contato de um profissional de saúde usando apenas o teclado. O botão "Informações" recebe o foco ao pressionar a tecla **Tab**, mas não responde ao comando **Enter** para ativar a funcionalidade.
+
+---
+
+### **Passos para reproduzir**
+1. Acesse a URL: [Lista de Profissionais](https://paciente-staging.lacreisaude.com.br/).
+2. Utilize a tecla **Tab** para navegar até o botão "Informações" de um profissional listado.
+3. Pressione a tecla **Enter** para tentar ativar a funcionalidade.
+4. Observe que o botão não responde ao comando.
+
+---
+
+### **Resultado esperado**
+- Ao pressionar **Enter**, o botão "Visualizar Informações" deve abrir uma nova página ou modal exibindo as informações de contato do profissional.
+
+---
+
+### **Resultado real**
+- O botão "Informações" não responde ao comando **Enter**, tornando impossível acessar as informações de contato apenas com o teclado.
+
+---
+
+### **Impacto**
+- **Gravidade**: Alta.
+  - Usuários que dependem exclusivamente do teclado para navegação não conseguem acessar as informações do profissional.
+  - Compromete a conformidade do sistema com as diretrizes de acessibilidade.
+- **Frequência**: Sempre que o botão é acessado via teclado.
+- **Impacto no negócio**:
+  - Afeta a experiência de usuários com deficiência motora ou que preferem navegação por teclado.
+  - Pode comprometer a imagem do sistema em termos de acessibilidade.
+
+---
+
+### **Ambiente de Teste**
+- **URL**: [https://paciente-staging.lacreisaude.com.br/](https://paciente-staging.lacreisaude.com.br/)
+- **Dispositivo**: Desktop em modo de navegação simulando acessibilidade por teclado.
+- **Sistema Operacional**: Windows 11 Home Single Language.
+- **Navegador**: Google Chrome Versão 131.0.6778.265 (Versão oficial) 64 bits.
+- **Data do Teste**: 10/01/2025.
+
+---
+
+### **Evidências**
+
+- **Gravação de tela:**
+  - [Visualizar Gravação Bug 4](https://app.screencast.com/6cHNsHsPB28g0).
+
+---
+
+### **Sugestão de Melhoria**
+1. Adicionar suporte ao evento de teclado para o botão "Informações", garantindo que o comando **Enter** funcione corretamente.
+2. Realizar testes manuais e automatizados para validar a acessibilidade de todos os botões interativos.
+
+---
+
+### **Prioridade**
+- **Alta**: Necessário corrigir para garantir a conformidade com as diretrizes de acessibilidade e melhorar a experiência do usuário.
