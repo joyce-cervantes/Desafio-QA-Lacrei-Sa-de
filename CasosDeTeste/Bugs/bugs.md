@@ -5,7 +5,7 @@
 ## **Bug 1: Perda de dados ao editar o cadastro, causando redirecionamento em loop para completar cadastro**
 
 ### **Descrição**
-Ao editar um dado no perfil de usuário e salvar, o sistema redireciona para o fluxo de "Completar Cadastro", mesmo que todos os dados já estivessem preenchidos anteriormente. O problema ocorre em duas etapas:
+Ao editar um dado no perfil de paciente e salvar, o sistema redireciona para o fluxo de "Completar Cadastro", mesmo que todos os dados já estivessem preenchidos anteriormente. O problema ocorre em duas etapas:
 1. Após salvar pela primeira vez, o sistema redireciona para "Completar Cadastro" e os dados anteriores são perdidos.
 2. Após preencher novamente e salvar, o sistema redireciona novamente para "Completar Cadastro".
 3. Apenas após salvar pela segunda vez, o sistema registra os dados corretamente.
@@ -39,7 +39,7 @@ Ao editar um dado no perfil de usuário e salvar, o sistema redireciona para o f
 
 ### **Impacto**
 - **Gravidade**: Alta.
-  - Prejudica a experiência do usuário, que precisa repetir o processo para salvar os dados.
+  - Prejudica a experiência do paciente, que precisa repetir o processo para salvar os dados.
   - Pode levar à frustração e à perda de confiança no sistema.
 - **Frequência**: Sempre que o cadastro é editado.
 - **Impacto no negócio**:
